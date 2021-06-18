@@ -1,4 +1,4 @@
-var = 26
+var = 10
 po = (var*var + 1)
 lst = []
 def indivs():
@@ -14,6 +14,9 @@ def indivs():
             e = (w-1) * (h-1) * var
         data = [w, h, e]
         data.sort()
+        for i in lst:
+            if i == data:
+                lst.remove(i)
         lst.append(data)
     lst.sort()
     for i in lst:
@@ -21,7 +24,7 @@ def indivs():
             if (i[1], i[2]) in ((w,h), (h,w)):
                 lst.remove(i)
     for i in lst:
-        print(i[0], "x",  i[1], ";", i[2], "|", "True")
+        print(i[0], "x",  i[1], ";", i[2])
 def totals():
     for i in range(1,po):
         for j in range(i,po):
